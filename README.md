@@ -41,4 +41,4 @@ Steps for push notification integration
 
 - Do not forget to check whether play services is installd on device before registering for GCM.
 
-- Do not forget to delete token and unregister in necessary situations.
+- Do not forget to delete token and unregister in necessary situations, such as onTerminate() of Application class.
