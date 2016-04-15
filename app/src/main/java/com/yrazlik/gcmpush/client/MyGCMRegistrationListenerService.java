@@ -14,7 +14,7 @@ import com.google.android.gms.iid.InstanceID;
 public class MyGCMRegistrationListenerService extends IntentService{
 
     private static final String TAG = "GCM_SERVICE";
-    private static final String GCM_SENDER_ID = "326448635390";
+    public static final String GCM_SENDER_ID = "326448635390";
 
     public MyGCMRegistrationListenerService() {
         super("");
