@@ -30,3 +30,7 @@ Steps for push notification integration
   - A service that extends `InstanceIDListenerService`, to handle the creation, rotation, and updating of registration tokens. Optionally, the `android.permission.WAKE_LOCK` permission if the application needs to keep the processor from sleeping when a message is received.
 
 - See the manifest file in the code for an example.
+
+- You will basically implement the following classses:
+
+  - MyGCMRegistrationListenerService: This class extends IntentService. You will register client to GCM service here and get the token in `onHandleIntent()` function.
