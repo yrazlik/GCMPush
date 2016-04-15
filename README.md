@@ -38,3 +38,7 @@ Steps for push notification integration
   - MyInstanceIDListenerService: This class extends InstanceIDListenerService. You will override `onTokenRefresh()` method and start registration service again there to handle token refresh situations.
   
   - MyGcmListenerService: This class extends GcmListenerService. Override `onMessageReceived()` function and parse the message received and show notification to user.
+
+- Do not forget to check whether play services is installd on device before registering for GCM.
+
+- Do not forget to delete token and unregister in necessary situations.
