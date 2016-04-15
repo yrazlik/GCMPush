@@ -34,3 +34,7 @@ Steps for push notification integration
 - You will basically implement the following classses:
 
   - MyGCMRegistrationListenerService: This class extends IntentService. You will register client to GCM service here and get the token in `onHandleIntent()` function.
+
+  - MyInstanceIDListenerService: This class extends InstanceIDListenerService. You will override `onTokenRefresh()` method and start registration service again there to handle token refresh situations.
+  
+  - MyGcmListenerService: This class extends GcmListenerService. Override `onMessageReceived()` function and parse the message received and show notification to user.
