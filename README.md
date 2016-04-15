@@ -18,3 +18,13 @@ Steps for push notification integration
 - Add the following to your build.gradle file to use google play services:
   
           `compile "com.google.android.gms:play-services-gcm:8.4.0"`
+
+- Add the following to your application's manifest:
+
+  - Your `<application-package-name> + ".permission.C2D_MESSAGE"` permission to prevent other Android applications from registering and receiving the Android application's messages. The permission name must exactly match this pattern—otherwise the Android application will not receive the messages.
+
+  - A declaration of `GcmReceiver`, which handles messages sent from GCM to your application. Because this service needs permission to receive messages from GCM, add `com.google.android.c2dm.permission.SEND` to the receiver.
+  
+  - A declaration of `GcmListenerService`, which enables various aspects of handling messages such as detecting different downstream message types, determining upstream send status, and automatically displaying simple notifications on the app’s behalf.
+
+  - A service that extends `InstanceIDListenerService`, to handle the creation, rotation, and updating of registration tokens. Optionally, the `android.permission.WAKE_LOCK` permission if the application needs to keep the processor from sleeping when a message is received.
