@@ -28,3 +28,7 @@ Steps for push notification integration
   - A declaration of `GcmListenerService`, which enables various aspects of handling messages such as detecting different downstream message types, determining upstream send status, and automatically displaying simple notifications on the app’s behalf.
 
   - A service that extends `InstanceIDListenerService`, to handle the creation, rotation, and updating of registration tokens. Optionally, the `android.permission.WAKE_LOCK` permission if the application needs to keep the processor from sleeping when a message is received.
+
+- See the manifest file in the code for an example.
+
+- 
